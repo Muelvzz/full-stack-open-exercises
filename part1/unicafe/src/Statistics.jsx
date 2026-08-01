@@ -6,6 +6,12 @@ const Statistics = ({
   average,
   percentPositive
 }) => {
+  if (!total) {
+    return (
+      <p>No feedback given</p>
+    )
+  }
+
   return (
     <div>
       <h1>Statistics</h1>
