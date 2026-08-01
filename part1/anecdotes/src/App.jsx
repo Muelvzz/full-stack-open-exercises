@@ -28,9 +28,16 @@ const App = () => {
 
   return (
     <div>
-      <p>{anecdotes[selected]} has {votes[selected]} votes</p>
-      <button onClick={handleVote}>vote</button>
-      <button onClick={handleSelected}>next anecdote</button>
+      <div>
+        <h1>Anecdote of the day</h1>
+        <p>{anecdotes[selected]} has {votes[selected]} votes</p>
+        <button onClick={handleVote}>vote</button>
+        <button onClick={handleSelected}>next anecdote</button>
+      </div>
+      <div>
+        <h1>Anecdote with most votes</h1>
+        <p>{anecdotes[votes.indexOf(Math.max(...votes))]} has {Math.max(...votes)} votes</p>
+      </div>
     </div>
   )
 }
