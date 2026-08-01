@@ -13,8 +13,8 @@ const App = () => {
   const handleBad = () => setBad(prev => prev + 1)
 
   const total = good + neutral + bad
-  const average = (good - bad) / total
-  const percentPositive = good / total
+  const average = ((good - bad) / total).toFixed(1)
+  const percentPositive = ((good / total) * 100).toFixed(2)
 
   return (
     <div>

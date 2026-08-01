@@ -15,15 +15,19 @@ const Statistics = ({
   }
 
   return (
-    <div>
+    <>
       <h1>Statistics</h1>
-      <StatisticLine text="good" value={ good }/>
-      <StatisticLine text="neutral" value={ neutral }/>
-      <StatisticLine text="bad" value={ bad }/>
-      <StatisticLine text="total" value={ total }/>
-      <StatisticLine text="average" value={ average }/>
-      <StatisticLine text="percentPositive" value={ percentPositive }/>
-    </div>
+      <table>
+        <tbody>
+          <StatisticLine text="good" value={ good }/>
+          <StatisticLine text="neutral" value={ neutral }/>
+          <StatisticLine text="bad" value={ bad }/>
+          <StatisticLine text="total" value={ total }/>
+          <StatisticLine text="average" value={ average }/>
+          <StatisticLine text="percentPositive" value={ `${ percentPositive }%` }/>
+        </tbody>
+      </table>
+    </>
   )
 }
 
