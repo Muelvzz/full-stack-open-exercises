@@ -8,8 +8,13 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setPersons(prev => [...prev, {name: newName}])
-    setNewName("")
+    if (persons.filter(person => person.name === newName)) {
+      window.alert(`${newName} is already added to phonebook`)
+      setNewName("")
+    } else {
+      setPersons(prev => [...prev, {name: newName}])
+      setNewName("")
+    }
   }
 
   return (
