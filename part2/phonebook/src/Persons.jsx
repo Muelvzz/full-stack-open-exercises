@@ -7,7 +7,7 @@ const Persons = ({personsToShow}) => {
         <Person 
           name={person.name}
           number={person.number}
-          key={person.id}
+          id={person.id}
         />
       ))}
     </>
