@@ -1,4 +1,15 @@
+import { useState, useEffect } from "react"
+import getWeather from "./services/weatherData"
+import Weather from "./Weather"
+
 const Country = ({country}) => {
+  const [countryWeather, setCountryWeather] = useState(null)
+
+  useEffect(() => {
+    getWeather(country.capitalInfo.latlng[0], country.capitalInfo.latlng[1])
+    .then(data => setCountryWeather(data))
+  }, [country.capitalInfo.latlng[0],country.capitalInfo.latlng[1]])
+
   return (
     <>
       <h1>{country.name.common}</h1>
@@ -15,6 +26,12 @@ const Country = ({country}) => {
         alt={`Flag of ${country.name.common}`}  
         style={{width: "200px"}}
       />
+      {countryWeather && (
+        <Weather
+          name={country.capital[0]}
+          weather={countryWeather}
+        />
+      )}
     </>
   )
 }

@@ -10,12 +10,11 @@ const Countries = ({countriesToShow}) => {
       {
         countriesToShow.map((country) => ( 
           <>
-          <p key={country.name.common}>{country.name.common}
-            <button onClick={
-              () => {setSelectedCountry(country), setShowCountry(prev => !prev)}
-            }>Show</button>
-          </p>
-          
+            <p key={country.name.common}>{country.name.common}
+              <button onClick={
+                () => {setSelectedCountry(country), setShowCountry(prev => !prev)}
+              }>Show</button>
+            </p>
           </>
         ))
       }
