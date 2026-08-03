@@ -2,15 +2,7 @@ import Country from "./Country"
 import Countries from "./Countries"
 
 const Content = ({countriesToShow, search}) => {
-
-  if (search === "") {
-    return (
-      <Countries
-        countriesToShow={countriesToShow}
-      />
-    )
-  }
-
+  
   if (countriesToShow.length > 10) {
     return (
       <p>Too many matches, specify another filter</p>
